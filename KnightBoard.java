@@ -11,9 +11,12 @@ public class KnightBoard {
       for (int j = 0; j < board[i].length; j++) {
         if (board[i][j] == 0) {
           ans += "_ ";
+        } else {
+          ans = ans + board[i][j] + " ";
         }
       }
       ans += '\n';
     }
+    return ans;
   }
 }
