@@ -5,5 +5,8 @@ public class Driver {
 
     //Should throw exception
     //KnightBoard board1 = new KnightBoard(0,3);
+
+    System.out.println(board.solve(0,0));
+    System.out.println(board);
   }
 }

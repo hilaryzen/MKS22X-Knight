@@ -27,15 +27,18 @@ public class KnightBoard {
 
   //Modifies the board by labeling the moves from 1 to the area of board in knight move steps
   public boolean solve(int startingRow, int startingCol) {
-    return true;
+    int[] movesR = {-2, -1, 1, 2, 2, 1, -1, -2};
+    int[] movesC = {1, 2, 2, 1, -1, -2, -2, -1};
+    return solveH(0,0,1);
   }
 
   private boolean solveH(int row, int col, int level) {
     if (level > board.length * board[0].length) {
       return true;
     } else {
-      if (board[row + 2][col + 1] == 0) {
+      if (board[row + 2][col + 1] == 0) { //Checks if knight can move to a square
         if (solveH(row + 2, col + 1, level + 1)) {
+          board[row + 2][col + 1] = level;
           return true;
         }
       }
