@@ -47,19 +47,18 @@ public class KnightBoard {
     if (level > board.length * board[0].length) { //Checks if all squares have been filled
       return true;
     } else {
-      if (board[row][col] == 0) {
-        board[row][col] = level;
-      }
-      for (int i = 0; i < movesR.length; i++) { //Loops through all possible moves
-        //Checking if row and col are within the board
-        if (row + movesR[i] >= 0 && row + movesR[i] < board.length && col + movesC[i] >= 0 && col + movesC[i] < board[0].length) {
-          if (board[row + movesR[i]][col + movesC[i]] == 0 && solveH(row + 2, col + 1, level + 1, movesR, movesC)) {
-            //board[row + 2][col + 1] = level;
-            return true;
+      if (addKnight(row, col, level)) {
+        for (int i = 0; i < movesR.length; i++) { //Loops through all possible moves
+          //Checking if row and col are within the board
+          if (row + movesR[i] >= 0 && row + movesR[i] < board.length && col + movesC[i] >= 0 && col + movesC[i] < board[0].length) {
+            if (board[row + movesR[i]][col + movesC[i]] == 0 && solveH(row + 2, col + 1, level + 1, movesR, movesC)) {
+              //board[row + 2][col + 1] = level;
+              return true;
+            }
           }
         }
       }
+      return false;
     }
-    return false;
   }
 }
