@@ -37,9 +37,12 @@ public class KnightBoard {
       return true;
     } else {
       for (int i = 0; i < movesR.length; i++) { //Loops through all possible moves
-        if (solveH(row + 2, col + 1, level + 1)) {
-          board[row + 2][col + 1] = level;
-          return true;
+        //Checking if row and col are within the board
+        if (row + movesR[i] >= 0 && row + movesR[i] < board.length && col + movesC[i] >= 0 && col + movesC[i] < board[0].length) {
+          if (board[row + movesR[i]][col + movesC[i]] == 0 && solveH(row + 2, col + 1, level + 1)) {
+            board[row + 2][col + 1] = level;
+            return true;
+          }
         }
       }
     }
