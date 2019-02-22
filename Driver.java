@@ -8,5 +8,9 @@ public class Driver {
 
     System.out.println(board.solve(0,0));
     System.out.println(board);
+
+    //KnightBoard board1 = new KnightBoard(5,5);
+    //System.out.println(board1.solve(0,0));
+    //System.out.println(board1);
   }
 }
