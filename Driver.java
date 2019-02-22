@@ -7,10 +7,12 @@ public class Driver {
     //KnightBoard board1 = new KnightBoard(0,3);
 
     System.out.println(board.solve(0,0));
+    System.out.println(board.solve(5,2 //Should throw exception
     System.out.println(board);
 
     KnightBoard board1 = new KnightBoard(5,5);
     System.out.println(board1.solve(0,0));
+    //System.out.println(board1.solve(4,4)); //Should throw exception
     System.out.println(board1);
   }
 }
