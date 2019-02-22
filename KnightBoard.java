@@ -93,4 +93,11 @@ public class KnightBoard {
       return false;
     }
   }
+
+  //Returns number of solutions specified from starting point
+  //Throws IllegalStateException when there are non-zero values
+  //Throws IllegalArgumentException when parameters are negative or out of bounds
+  public int countSolutions(int startingRow, int startingCol) {
+    return 0;
+  }
 }
