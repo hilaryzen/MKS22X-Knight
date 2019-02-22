@@ -56,7 +56,20 @@ public class KnightBoard {
   }
 
   //Modifies the board by labeling the moves from 1 to the area of board in knight move steps
+  //Leaves board blank if there is no solution
+  //Throws IllegalStateException when there are non-zero values
+  //Throws IllegalArgumentException when parameters are negative or out of bounds
   public boolean solve(int startingRow, int startingCol) {
+    for (int i = 0; i < board.length; i++) {
+      for (int j = 0; j < board[i].length; j++) {
+        if (board[i][j] != 0) {
+          throw new IllegalStateException();
+        }
+      }
+    }
+    if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[startingRow].length) {
+      throw new IllegalArgumentException();
+    }
     int[] movesR = {-2, -1, 1, 2, 2, 1, -1, -2};
     int[] movesC = {1, 2, 2, 1, -1, -2, -2, -1};
     return solveH(0,0,1, movesR, movesC);
