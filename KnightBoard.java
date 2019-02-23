@@ -103,6 +103,7 @@ public class KnightBoard {
 
   private int countH(int row, int col, int level) {
     int total = 0;
+    /*
     if (level > board.length * board[0].length) {
       return 1; //Base case for solved board
     } else {
@@ -114,5 +115,18 @@ public class KnightBoard {
       }
       return total;
     }
+    */
+    if (addKnight(row, col, level)) {
+      if (level == board.length * board[0].length) {
+        removeKnight(row, col);
+        return 1;
+      } else {
+        for (int i = 0; i < movesR.length; i++) {
+          total += countH(row + movesR[i], col + movesC[i], level + 1);
+        }
+      }
+      removeKnight(row, col);
+    }
+    return total;
   }
 }
