@@ -31,5 +31,8 @@ public class Driver {
 
     KnightBoard board5 = new KnightBoard(4,6);
     System.out.println("Solutions for 4 by 6 (should be 220): " + board5.countSolutions(0,0));
+
+    KnightBoard board6 = new KnightBoard(5,5);
+    System.out.println("Solutions for 5 by 5 (should be 304): " + board6.countSolutions(0,0));
   }
 }
