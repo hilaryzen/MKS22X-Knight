@@ -72,12 +72,10 @@ public class KnightBoard {
     if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[startingRow].length) {
       throw new IllegalArgumentException();
     }
-    int[] movesR = {-2, -1, 1, 2, 2, 1, -1, -2};
-    int[] movesC = {1, 2, 2, 1, -1, -2, -2, -1};
-    return solveH(0,0,1, movesR, movesC);
+    return solveH(0,0,1);
   }
 
-  private boolean solveH(int row, int col, int level, int[] movesR, int[] movesC) {
+  private boolean solveH(int row, int col, int level) {
     if (level > board.length * board[0].length) { //Checks if all squares have been filled
       return true;
     } else {
@@ -85,7 +83,7 @@ public class KnightBoard {
         //Debugging
         //System.out.println(toString());
         for (int i = 0; i < movesR.length; i++) { //Loops through all possible moves
-          if (solveH(row + movesR[i], col + movesC[i], level + 1, movesR, movesC)) {
+          if (solveH(row + movesR[i], col + movesC[i], level + 1)) {
             return true;
           }
           //removeKnight(row, col);
@@ -109,7 +107,7 @@ public class KnightBoard {
     } else {
       int total = 0;
       if (addKnight(row, col, level)) {
-        for (int i = 0; i)
+
       }
     }
     return 0;
