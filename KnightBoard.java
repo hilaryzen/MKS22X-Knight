@@ -117,11 +117,12 @@ public class KnightBoard {
     }
     */
     if (addKnight(row, col, level)) {
-      if (level == board.length * board[0].length) {
+      if (level == board.length * board[0].length) { //Base case, when board is solved
         removeKnight(row, col);
         return 1;
       } else {
-        for (int i = 0; i < movesR.length; i++) {
+        for (int i = 0; i < movesR.length; i++) { //Loops through possible moves
+          //Adds # of solutions from each possible move
           total += countH(row + movesR[i], col + movesC[i], level + 1);
         }
       }

@@ -24,9 +24,12 @@ public class Driver {
     KnightBoard board3 = new KnightBoard(3,4);
     //System.out.println(board3.solve(0,0));
     //System.out.println(board3);
-    System.out.println("Solutions for 3 by 4: " + board3.countSolutions(0,0));
+    System.out.println("Solutions for 3 by 4 (should be 2): " + board3.countSolutions(0,0));
 
     KnightBoard board4 = new KnightBoard(4,5);
-    System.out.println("Solutions for 4 by 5: " + board4.countSolutions(0,0));
+    System.out.println("Solutions for 4 by 5 (should be 32): " + board4.countSolutions(0,0));
+
+    KnightBoard board5 = new KnightBoard(4,6);
+    System.out.println("Solutions for 4 by 6 (should be 220): " + board5.countSolutions(0,0));
   }
 }
