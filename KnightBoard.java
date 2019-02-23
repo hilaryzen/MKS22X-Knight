@@ -1,5 +1,7 @@
 public class KnightBoard {
   private int[][] board;
+  private int[] movesR = {-2, -1, 1, 2, 2, 1, -1, -2};
+  private int[] movesC = {1, 2, 2, 1, -1, -2, -2, -1};
 
   public KnightBoard(int startingRows, int startingCols) {
     if (startingRows <= 0 || startingCols <= 0) {
@@ -98,6 +100,18 @@ public class KnightBoard {
   //Throws IllegalStateException when there are non-zero values
   //Throws IllegalArgumentException when parameters are negative or out of bounds
   public int countSolutions(int startingRow, int startingCol) {
+    return 0;
+  }
+
+  private int countH(int row, int col, int level) {
+    if (level > board.length * board[0].length) {
+      return 0; //Base case
+    } else {
+      int total = 0;
+      if (addKnight(row, col, level)) {
+        for (int i = 0; i)
+      }
+    }
     return 0;
   }
 }
