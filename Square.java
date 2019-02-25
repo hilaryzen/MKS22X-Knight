@@ -3,7 +3,7 @@ public class Square {
   private int col;
   private int outgoingMoves;
 
-  public Square (int startingRow, int startingCol, int boardRows, int boardCols) {
+  public Square(int startingRow, int startingCol, int boardRows, int boardCols) {
     row = startingRow;
     col = startingCol;
     if (startingRow == 0 || startingRow == boardRows - 1) {
@@ -13,7 +13,19 @@ public class Square {
     }
   }
 
-  public void setMoves (int newMoves) {
+  public int getRow() {
+    return row;
+  }
+
+  public int getCol() {
+    return col;
+  }
+
+  public int getMoves() {
+    return outgoingMoves;
+  }
+
+  public void setMoves(int newMoves) {
     outgoingMoves = newMoves;
   }
 }
