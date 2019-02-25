@@ -13,5 +13,7 @@ public class Square {
     }
   }
 
-  //public void setMoves (int )
+  public void setMoves (int newMoves) {
+    outgoingMoves = newMoves;
+  }
 }
