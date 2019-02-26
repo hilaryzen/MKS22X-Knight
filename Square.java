@@ -9,6 +9,10 @@ public class Square {
     if (startingRow == 0 || startingRow == boardRows - 1) {
       if (startingCol == 0 || startingCol == boardCols - 1) {
         outgoingMoves = 2;
+      } else if (startingCol == 1 || startingCol == boardCols - 2) {
+        outgoingMoves = 3;
+      } else {
+        outgoingMoves = 4;
       }
     }
   }
