@@ -72,7 +72,7 @@ public class KnightBoard {
     if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[startingRow].length) {
       throw new IllegalArgumentException();
     }
-    return solveH(0,0,1);
+    return solveH(startingRow, startingCol, 1);
   }
 
   private boolean solveH(int row, int col, int level) {
