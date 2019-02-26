@@ -14,6 +14,14 @@ public class Square {
       } else {
         outgoingMoves = 4;
       }
+    } else if (startingRow == 1 || startingRow == boardRows - 2) {
+      if (startingCol == 0 || startingCol == boardCols - 1) {
+        outgoingMoves = 3;
+      } else if (startingCol == 1 || startingCol == boardCols - 2) {
+        outgoingMoves = 4;
+      } else {
+        outgoingMoves = 6;
+      }
     }
   }
 
