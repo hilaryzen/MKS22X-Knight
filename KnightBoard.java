@@ -108,7 +108,7 @@ public class KnightBoard {
     if (startingRow < 0 || startingRow >= board.length || startingCol < 0 || startingCol >= board[startingRow].length) {
       throw new IllegalArgumentException();
     }
-    return countH(0,0,1);
+    return countH(startingRow, startingCol, 1);
   }
 
   private int countH(int row, int col, int level) {
