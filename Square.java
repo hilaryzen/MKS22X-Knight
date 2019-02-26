@@ -22,6 +22,14 @@ public class Square {
       } else {
         outgoingMoves = 6;
       }
+    } else {
+      if (startingCol == 0 || startingCol == boardCols - 1) {
+        outgoingMoves = 4;
+      } else if (startingCol == 1 || startingCol == boardCols - 2) {
+        outgoingMoves = 6;
+      } else {
+        outgoingMoves = 8;
+      }
     }
   }
 
