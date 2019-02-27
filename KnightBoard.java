@@ -1,5 +1,6 @@
 public class KnightBoard {
   private int[][] board;
+  private int[][] outgoingMoves;
   private int[] movesR = {-2, -1, 1, 2, 2, 1, -1, -2};
   private int[] movesC = {1, 2, 2, 1, -1, -2, -2, -1};
 
@@ -8,6 +9,37 @@ public class KnightBoard {
       throw new IllegalArgumentException();
     }
     board = new int[startingRows][startingCols];
+    //Setting up board of outgoing moves
+    outgoingMoves = new int[startingRows][startingCols];
+    for (int i = 0; i < startingRows; i++) {
+      for (int j = 0; j < startingCols; j++) {
+        if (i == 0 || i == startingRows - 1) {
+          if (j == 0 || j == startingCols - 1) {
+            outgoingMoves = 2;
+          } else if (j == 1 || j == startingCols - 2) {
+            outgoingMoves = 3;
+          } else {
+            outgoingMoves = 4;
+          }
+        } else if (i == 1 || i == startingRows - 2) {
+          if (j == 0 || j == startingCols - 1) {
+            outgoingMoves = 3;
+          } else if (j == 1 || j == startingCols - 2) {
+            outgoingMoves = 4;
+          } else {
+            outgoingMoves = 6;
+          }
+        } else {
+          if (j == 0 || j == startingCols - 1) {
+            outgoingMoves = 4;
+          } else if (j == 1 || j == startingCols - 2) {
+            outgoingMoves = 6;
+          } else {
+            outgoingMoves = 8;
+          }
+        }
+      }
+    }
   }
 
   //Blank boards display underscores
