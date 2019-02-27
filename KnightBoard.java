@@ -67,6 +67,18 @@ public class KnightBoard {
     return ans;
   }
 
+  //Printing out the board of outgoing moves
+  public String moves() {
+    String ans = "";
+    for (int i = 0; i < outgoingMoves.length; i++) {
+      for (int j = 0; j < outgoingMoves[0].length; j++) {
+        ans = ans + outgoingMoves[i][j] + " ";
+      }
+      ans += '\n';
+    }
+    return ans;
+  }
+
   //Adds knight to given square if possible
   private boolean addKnight(int row, int col, int level) {
     if (row >= 0 && row < board.length && col >= 0 && col < board[0].length) {
