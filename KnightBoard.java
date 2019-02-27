@@ -15,27 +15,27 @@ public class KnightBoard {
       for (int j = 0; j < startingCols; j++) {
         if (i == 0 || i == startingRows - 1) {
           if (j == 0 || j == startingCols - 1) {
-            outgoingMoves = 2;
+            outgoingMoves[i][j] = 2;
           } else if (j == 1 || j == startingCols - 2) {
-            outgoingMoves = 3;
+            outgoingMoves[i][j] = 3;
           } else {
-            outgoingMoves = 4;
+            outgoingMoves[i][j] = 4;
           }
         } else if (i == 1 || i == startingRows - 2) {
           if (j == 0 || j == startingCols - 1) {
-            outgoingMoves = 3;
+            outgoingMoves[i][j] = 3;
           } else if (j == 1 || j == startingCols - 2) {
-            outgoingMoves = 4;
+            outgoingMoves[i][j] = 4;
           } else {
-            outgoingMoves = 6;
+            outgoingMoves[i][j] = 6;
           }
         } else {
           if (j == 0 || j == startingCols - 1) {
-            outgoingMoves = 4;
+            outgoingMoves[i][j] = 4;
           } else if (j == 1 || j == startingCols - 2) {
-            outgoingMoves = 6;
+            outgoingMoves[i][j] = 6;
           } else {
-            outgoingMoves = 8;
+            outgoingMoves[i][j] = 8;
           }
         }
       }
