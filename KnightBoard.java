@@ -95,6 +95,12 @@ public class KnightBoard {
     if (row >= 0 && row < board.length && col >= 0 && col < board[0].length) {
       if (board[row][col] != 0) {
         board[row][col] = 0;
+        //Loop adds back one possible move to all squares knight can reach
+        for (int i = 0; i < movesR.length; i++) {
+          if (row + movesR[i] >= 0 && row + movesR[i] < board.length && col + movesC[i] >= 0 && col + movesC[i] < board[0].length) {
+            outgoingMoves[row + movesR[i]][col + movesC[i]]++;
+          }
+        }
         return true;
       }
     }
