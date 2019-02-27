@@ -115,6 +115,7 @@ public class KnightBoard {
   }
 
   //Sorts movesR and movesC using the outgoingMoves
+  //Changes three arrays at the same time
   public void sortMoves(int row, int col) {
     int[] outgoing = new int[movesR.length]; //Array of outgoing moves of possible next squares
     //Setting up outgoing array
@@ -128,6 +129,24 @@ public class KnightBoard {
           outgoing[i] = outgoingMoves[row + movesR[i]][col + movesC[i]];
         }
       }
+    }
+    //Insertion sort
+    int current; //The number in outgoing array being sorted
+    int currentRow; //The row of the square
+    int currentCol; //The col of the square
+    for (int move = 1; move < outgoing.length; move++) {
+      current = outgoing[move];
+      currentRow = movesR[move];
+      currentCol = movesC[move];
+      int j = move;
+      while (j > 0 && outgoing[j-1] > current) {
+        outgoing[j] = outgoing[j-1];
+        movesR[j] = movesR[j-1];
+        movesC[j] = movesC[j-1];
+        j--;
+      }
+      data[j] = current;
+      j = 0;
     }
   }
 
