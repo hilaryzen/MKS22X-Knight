@@ -80,7 +80,7 @@ public class KnightBoard {
   }
 
   //Adds knight to given square if possible
-  private boolean addKnight(int row, int col, int level) {
+  public boolean addKnight(int row, int col, int level) {
     if (row >= 0 && row < board.length && col >= 0 && col < board[0].length) {
       if (board[row][col] == 0) {
         board[row][col] = level;
@@ -97,7 +97,7 @@ public class KnightBoard {
   }
 
   //Removes knight by replacing value with 0
-  private boolean removeKnight(int row, int col) {
+  public boolean removeKnight(int row, int col) {
     if (row >= 0 && row < board.length && col >= 0 && col < board[0].length) {
       if (board[row][col] != 0) {
         board[row][col] = 0;
