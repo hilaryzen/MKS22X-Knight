@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Driver {
   public static void main(String[] args) {
     KnightBoard board = new KnightBoard(3,3);
@@ -45,5 +47,11 @@ public class Driver {
     board7.removeKnight(0,0);
     System.out.println(board7);
     System.out.println(board7.moves());
+
+    //Testing sort
+    System.out.println("Sorted arrays for (4,4): ");
+    board7.sortMoves(4,4);
+    System.out.println("Sorted arrays for (0,7): ");
+    board7.sortMoves(0,7);
   }
 }

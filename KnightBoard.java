@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class KnightBoard {
   private int[][] board;
   private int[][] outgoingMoves;
@@ -128,6 +130,8 @@ public class KnightBoard {
         } else {
           outgoing[i] = outgoingMoves[row + movesR[i]][col + movesC[i]];
         }
+      } else {
+        outgoing[i] = 100;
       }
     }
     //Insertion sort
@@ -150,6 +154,10 @@ public class KnightBoard {
       movesC[j] = currentCol;
       j = 0;
     }
+    //Testing
+    System.out.println(Arrays.toString(outgoing));
+    System.out.println(Arrays.toString(movesR));
+    System.out.println(Arrays.toString(movesC));
   }
 
   //Modifies the board by labeling the moves from 1 to the area of board in knight move steps
