@@ -131,6 +131,7 @@ public class KnightBoard {
           outgoing[i] = outgoingMoves[row + movesR[i]][col + movesC[i]];
         }
       } else {
+        //If move is out of bounds, square will also be pushed to the back
         outgoing[i] = 100;
       }
     }
@@ -155,9 +156,9 @@ public class KnightBoard {
       j = 0;
     }
     //Testing
-    System.out.println(Arrays.toString(outgoing));
-    System.out.println(Arrays.toString(movesR));
-    System.out.println(Arrays.toString(movesC));
+    //System.out.println(Arrays.toString(outgoing));
+    //System.out.println(Arrays.toString(movesR));
+    //System.out.println(Arrays.toString(movesC));
   }
 
   //Modifies the board by labeling the moves from 1 to the area of board in knight move steps
