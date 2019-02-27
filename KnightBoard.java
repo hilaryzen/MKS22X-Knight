@@ -103,6 +103,7 @@ public class KnightBoard {
         board[row][col] = 0;
         //Loop adds back one possible move to all squares knight can reach
         for (int i = 0; i < movesR.length; i++) {
+          //Checking if move is inside the board
           if (row + movesR[i] >= 0 && row + movesR[i] < board.length && col + movesC[i] >= 0 && col + movesC[i] < board[0].length) {
             outgoingMoves[row + movesR[i]][col + movesC[i]]++;
           }
@@ -115,7 +116,19 @@ public class KnightBoard {
 
   //Sorts movesR and movesC using the outgoingMoves
   public void sortMoves(int row, int col) {
-    int[] outgoing = new int[outgoingMoves[row][col]]
+    int[] outgoing = new int[movesR.length]; //Array of outgoing moves of possible next squares
+    //Setting up outgoing array
+    for (int i = 0; i < movesR.length; i++) {
+      if (row + movesR[i] >= 0 && row + movesR[i] < board.length && col + movesC[i] >= 0 && col + movesC[i] < board[0].length) {
+        if (board[row + movesR[i]][col + movesC[i]] != 0) {
+          //If knight is on the square, outgoing moves is very large
+          //Pushes square to the back
+          outgoing[i] = 100;
+        } else {
+          outgoing[i] = outgoingMoves[row + movesR[i]][col + movesC[i]];
+        }
+      }
+    }
   }
 
   //Modifies the board by labeling the moves from 1 to the area of board in knight move steps
