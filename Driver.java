@@ -19,12 +19,12 @@ public class Driver {
     //System.out.println(board1.solve(4,4)); //Should throw exception
     System.out.println(board1);
 
-    /*
-    KnightBoard board2 = new KnightBoard(9,9);
+    System.out.println("Testing optimized solve");
+    KnightBoard board2 = new KnightBoard(80,80);
     System.out.println(board2.solve(0,0));
-    System.out.println(board2);
-    */
+    //System.out.println(board2);
 
+    /*
     KnightBoard board3 = new KnightBoard(3,4);
     System.out.println(board3.moves());
     //System.out.println(board3.solve(0,0));
@@ -39,19 +39,24 @@ public class Driver {
 
     KnightBoard board6 = new KnightBoard(5,5);
     System.out.println("Solutions for 5 by 5 (should be 304): " + board6.countSolutions(0,0));
+    */
 
     //Testing addKnight and removeKnight
+    /*
     KnightBoard board7 = new KnightBoard(8,8);
     board7.addKnight(0,0,1);
     board7.addKnight(3,3,14);
     board7.removeKnight(0,0);
     System.out.println(board7);
     System.out.println(board7.moves());
+    */
 
     //Testing sort
+    /*
     System.out.println("Sorted arrays for (4,4): ");
     board7.sortMoves(4,4);
     System.out.println("Sorted arrays for (0,7): ");
     board7.sortMoves(0,7);
+    */
   }
 }

@@ -186,6 +186,7 @@ public class KnightBoard {
       if (addKnight(row, col, level)) {
         //Debugging
         //System.out.println(toString());
+        sortMoves(row,col);
         for (int i = 0; i < movesR.length; i++) { //Loops through all possible moves
           if (solveH(row + movesR[i], col + movesC[i], level + 1)) {
             return true;
