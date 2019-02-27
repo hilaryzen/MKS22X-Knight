@@ -2,6 +2,7 @@ public class Driver {
   public static void main(String[] args) {
     KnightBoard board = new KnightBoard(3,3);
     System.out.println(board);
+    System.out.println(board.moves());
 
     //Should throw exception
     //KnightBoard board1 = new KnightBoard(0,3);
@@ -23,6 +24,7 @@ public class Driver {
     */
 
     KnightBoard board3 = new KnightBoard(3,4);
+    System.out.println(board3.moves());
     //System.out.println(board3.solve(0,0));
     //System.out.println(board3);
     System.out.println("Solutions for 3 by 4 (should be 2): " + board3.countSolutions(0,0));
