@@ -113,6 +113,11 @@ public class KnightBoard {
     return false;
   }
 
+  //Sorts movesR and movesC using the outgoingMoves
+  public void sortMoves(int row, int col) {
+    int[] outgoing = new int[outgoingMoves[row][col]]
+  }
+
   //Modifies the board by labeling the moves from 1 to the area of board in knight move steps
   //Leaves board blank if there is no solution
   //Throws IllegalStateException when there are non-zero values
