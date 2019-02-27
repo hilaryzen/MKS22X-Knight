@@ -145,7 +145,9 @@ public class KnightBoard {
         movesC[j] = movesC[j-1];
         j--;
       }
-      data[j] = current;
+      outgoing[j] = current;
+      movesR[j] = currentRow;
+      movesC[j] = currentCol;
       j = 0;
     }
   }
